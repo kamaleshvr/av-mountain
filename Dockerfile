@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -y \
     unzip \
     curl \
     libzip-dev \
+    nodejs \
+    npm \
     && docker-php-ext-install zip pdo pdo_mysql
 
 # Install Composer
@@ -15,11 +17,13 @@ WORKDIR /var/www
 
 COPY . .
 
-# Install dependencies
+# Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Expose port
+# Install and build frontend assets
+RUN npm install
+RUN npm run build
+
 EXPOSE 10000
 
-# Run migrations automatically before starting
-CMD php artisan migrate --force && php artisan storage:link && php artisan serve --host=0.0.0.0 --port=10000
+CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=10000
