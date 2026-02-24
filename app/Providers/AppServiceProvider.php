@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+         if (env('APP_ENV') === 'production') {
+        \Illuminate\Support\Facades\URL::forceScheme('https');
+         }
         try {
             // Share theme with all views using View::share
             if (\Illuminate\Support\Facades\Schema::hasTable('settings')) {
