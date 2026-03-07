@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     nodejs \
     npm \
-    netcat \
+    netcat-openbsd \
     && docker-php-ext-install pdo_mysql zip
 
 # Install composer
@@ -29,29 +29,26 @@ RUN composer install --no-dev --optimize-autoloader
 # Install frontend dependencies
 RUN npm install
 
-# For Laravel Mix
+# Build assets (Laravel Mix)
 RUN npm run production || true
 
-# For Vite projects (if production script missing)
-RUN npm run build || true
-
-# Laravel optimizations
+# Clear Laravel caches
 RUN php artisan config:clear || true
 RUN php artisan route:clear || true
 RUN php artisan view:clear || true
 
 # Create startup script
-RUN echo '#!/bin/sh \n\
-echo "Waiting for database..." \n\
-while ! nc -z $DB_HOST $DB_PORT; do \n\
-  sleep 2 \n\
-done \n\
-echo "Database connected!" \n\
-php artisan migrate --force \n\
-php artisan config:cache \n\
-php artisan route:cache \n\
-php artisan view:cache \n\
-php artisan serve --host=0.0.0.0 --port=8080 \n\
+RUN echo '#!/bin/sh \
+echo "Waiting for database..." \
+while ! nc -z $DB_HOST $DB_PORT; do \
+  sleep 2 \
+done \
+echo "Database connected!" \
+php artisan migrate --force \
+php artisan config:cache \
+php artisan route:cache \
+php artisan view:cache \
+php artisan serve --host=0.0.0.0 --port=8080 \
 ' > /start.sh
 
 RUN chmod +x /start.sh
