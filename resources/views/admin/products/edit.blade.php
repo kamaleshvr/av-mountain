@@ -39,7 +39,7 @@
                     <label for="image" style="display: block; margin-bottom: 0.5rem; color: var(--text-gray);">Product Image (Max 10MB)</label>
                     @if($product->image)
                         <div style="margin-bottom: 1rem;">
-                            <img src="{{ Str::startsWith($product->image, 'http') ? $product->image : asset($product->image) }}" alt="Current Image" style="max-height: 100px; border-radius: 5px;">
+                            <img src="{{ Str::startsWith($product->image, 'https') ? $product->image : asset($product->image) }}" alt="Current Image" style="max-height: 100px; border-radius: 5px;">
                         </div>
                     @endif
                     <input type="file" id="image" accept="image/*" style="width: 100%; padding: 0.8rem; border-radius: 5px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: white;">

@@ -15,7 +15,7 @@
         <div class="col">
             <div class="product-card glass-card p-0 animate-slide-up" style="animation-delay:{{ $loop->index * 0.2 }}s;">
                 <div style="height:220px;overflow:hidden;border-radius:16px 16px 0 0;">
-                    <img src="{{ Str::startsWith($category->hero_image, 'http') ? $category->hero_image : asset($category->hero_image) }}"
+                    <img src="{{ Str::startsWith($category->hero_image, 'https') ? $category->hero_image : asset($category->hero_image) }}"
                          alt="{{ $category->name }}" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;"
                          onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                 </div>

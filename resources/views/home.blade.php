@@ -83,7 +83,7 @@
                 <div class="col">
                     <div class="product-card animate-slide-up" style="animation-delay:{{ $loop->index * 0.1 }}s;">
                         <div style="height:200px;overflow:hidden;position:relative;">
-                            <img src="{{ Str::startsWith($category->hero_image ?? '', 'http') ? $category->hero_image : asset($category->hero_image ?? 'images/placeholder.jpg') }}"
+                            <img src="{{ Str::startsWith($category->hero_image ?? '', 'https') ? $category->hero_image : asset($category->hero_image ?? 'images/placeholder.jpg') }}"
                                  alt="{{ $category->name }}"
                                  style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;"
                                  onmouseover="this.style.transform='scale(1.08)'"
