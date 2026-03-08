@@ -19,7 +19,7 @@ RUN composer install --no-dev --optimize-autoloader
 
 # Install frontend dependencies
 RUN npm install
-RUN npm run production || true
+RUN npm run production
 
 # Expose port for Railway
 EXPOSE 8080
@@ -28,4 +28,5 @@ EXPOSE 8080
 CMD php artisan config:clear && \
     php artisan cache:clear && \
     php artisan migrate --force || true && \
+    php artisan db:seed --force || true && \
     php artisan serve --host=0.0.0.0 --port=$PORT
