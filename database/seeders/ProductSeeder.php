@@ -26,31 +26,31 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Whole Coconut',
                 'description' => 'Fresh, mature coconuts with husk, perfect for religious offerings and culinary use.',
-                'image' => 'https://images.unsplash.com/photo-1596386461350-326ea7750f6b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771169395_vY0uwstyaz.jpeg',
                 'sort_order' => 1
             ],
             [
                 'name' => 'Semi-Husked Coconut',
                 'description' => 'Partially de-husked coconuts, easy to handle and with longer shelf life.',
-                'image' => 'https://images.unsplash.com/photo-1624823183492-4b248006d482?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771169407_VvdXS5bfob.jpeg',
                 'sort_order' => 2
             ],
             [
                 'name' => 'De-Husked Coconut',
                 'description' => 'Fully de-husked coconuts, convenient for immediate processing and consumption.',
-                'image' => 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', 
+                'image' => '/images/products/1771169417_8kVTBIgruZ.jpeg', 
                 'sort_order' => 3
             ],
             [
                 'name' => 'Tender Coconut',
                 'description' => 'Young coconuts filled with sweet, refreshing water and soft meat.',
-                'image' => 'https://images.unsplash.com/photo-1533604118557-41a4a44b2046?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771169428_wfStwT8tup.jpeg',
                 'sort_order' => 4
             ],
             [
                 'name' => 'Copra',
                 'description' => 'Dried coconut kernels, essential for oil extraction and industrial use.',
-                'image' => 'https://images.unsplash.com/photo-1647915594191-2a6c38210350?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771169538_zprr8It8es.jpeg',
                 'sort_order' => 5
             ]
         ];
@@ -74,37 +74,37 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Rice (Basmati & Non-Basmati)',
                 'description' => 'Premium aromatic Basmati and high-quality non-Basmati rice varieties.',
-                'image' => 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771169719_ti83I2Hn8A.jpeg',
                 'sort_order' => 1
             ],
             [
                 'name' => 'Wheat',
                 'description' => 'Golden grains of hard and soft wheat, ideal for flour and baking.',
-                'image' => 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771169742_D5MD1UHmQq.jpeg',
                 'sort_order' => 2
             ],
             [
                 'name' => 'Millets',
                 'description' => 'Nutritious ancient grains including Pearl, Finger, and Foxtail millet.',
-                'image' => 'https://images.unsplash.com/photo-1627485937980-221c88ac04f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771169759_zQ9dvlIoze.jpeg',
                 'sort_order' => 3
             ],
             [
                 'name' => 'Maize (Corn)',
                 'description' => 'High-quality yellow and white maize for food and industrial applications.',
-                'image' => 'https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771169780_sN7wL9Abnl.jpeg',
                 'sort_order' => 4
             ],
             [
                 'name' => 'Barley',
                 'description' => 'Versatile grain used for malting, animal feed, and health foods.',
-                'image' => 'https://images.unsplash.com/photo-1596707328643-8557b779ec40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771169864_rF6Y0b1Irp.jpeg',
                 'sort_order' => 5
             ],
             [
                 'name' => 'Sorghum (Jowar)',
                 'description' => 'Drought-resistant grain, rich in fiber and antioxidants.',
-                'image' => 'https://images.unsplash.com/photo-1631526437937-295982823055?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771169900_mwKEUqBEZk.jpeg',
                 'sort_order' => 6
             ]
         ];
@@ -128,31 +128,31 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Chickpeas (Kabuli & Desi)',
                 'description' => 'Protein-rich chickpeas, available in large white and smaller brown varieties.',
-                'image' => 'https://images.unsplash.com/photo-1585996024357-3f37351666e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771169931_9IEN27lfAl.jpeg',
                 'sort_order' => 1
             ],
             [
                 'name' => 'Lentils (Red, Green, Yellow)',
                 'description' => 'Quick-cooking lentils, a staple source of plant-based protein.',
-                'image' => 'https://images.unsplash.com/photo-1515544779607-b67aaaf6152a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771169956_WTaUgXwqmo.jpeg',
                 'sort_order' => 2
             ],
             [
                 'name' => 'Kidney Beans (Rajma)',
                 'description' => 'Robust red beans, perfect for curries and salads.',
-                'image' => 'https://images.unsplash.com/photo-1595183885542-a25381f08cb4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771170017_nQKk2fqBtI.jpeg',
                 'sort_order' => 3
             ],
             [
                 'name' => 'Black Gram (Urad)',
                 'description' => 'Essential for South Indian cuisine like idli and dosa batters.',
-                'image' => 'https://images.unsplash.com/photo-1601633533804-03e059556d11?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/dbMWVFiIRqJVG3UU1fj25V2r6hK7Slx9tBIZcIf0.jpg',
                 'sort_order' => 4
             ],
              [
                 'name' => 'Green Gram (Moong)',
                 'description' => 'Highly nutritious and easy to digest, often used for sprouts.',
-                'image' => 'https://images.unsplash.com/photo-1628103328575-b60584742a08?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/S6zGJdRi4jHokJkw1ZiN5joCeREpV5OtSd53nz5L.jpg',
                 'sort_order' => 5
             ]
         ];
@@ -176,19 +176,19 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Red Onion',
                 'description' => 'Pungent and flavorful onions with a long shelf life.',
-                'image' => 'https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1771175851_O2zSN4DMGX.jpeg',
                 'sort_order' => 1
             ],
             [
                 'name' => 'Potato',
                 'description' => 'Starchy tubers available in various sizes for multiple culinary uses.',
-                'image' => 'https://images.unsplash.com/photo-1518977676601-b53f82a6b69d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1772971477_0kfgxu4Vwx.jpeg',
                 'sort_order' => 2
             ],
             [
                 'name' => 'Tomato',
                 'description' => 'Juicy, red tomatoes picked at peak ripeness.',
-                'image' => 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                'image' => '/images/products/1772971462_HysxKF762Q.jpeg',
                 'sort_order' => 3
             ],
             [
