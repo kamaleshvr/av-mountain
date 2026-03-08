@@ -13,6 +13,7 @@ php artisan view:cache
 
 echo "==> Running database migrations..."
 php artisan migrate --force
+php artisan db:seed --force
 
 echo "==> Creating storage symlink..."
 php artisan storage:link --quiet || true

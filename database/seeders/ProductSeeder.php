@@ -11,21 +11,18 @@ class ProductSeeder extends Seeder
 {
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        Product::truncate();
-        ProductCategory::truncate();
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
         // 1. Coconuts
-        $coconuts = ProductCategory::create([
-            'name' => 'Coconuts', 
-            'slug' => 'coconuts', 
-            'status' => true,
-            'hero_image' => 'https://images.unsplash.com/photo-1544558635-667480601430?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-            'description' => 'Fresh, Desiccated, and Processed varieties'
-        ]);
+        $coconuts = ProductCategory::firstOrCreate(
+            ['slug' => 'coconuts'],
+            [
+                'name' => 'Coconuts', 
+                'status' => true,
+                'hero_image' => 'https://images.unsplash.com/photo-1544558635-667480601430?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+                'description' => 'Fresh, Desiccated, and Processed varieties'
+            ]
+        );
         
-        $coconuts->products()->createMany([
+        $coconutsProducts = [
             [
                 'name' => 'Whole Coconut',
                 'description' => 'Fresh, mature coconuts with husk, perfect for religious offerings and culinary use.',
@@ -56,18 +53,24 @@ class ProductSeeder extends Seeder
                 'image' => 'https://images.unsplash.com/photo-1647915594191-2a6c38210350?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
                 'sort_order' => 5
             ]
-        ]);
+        ];
+
+        foreach ($coconutsProducts as $prod) {
+            Product::firstOrCreate(['name' => $prod['name']], array_merge($prod, ['category_id' => $coconuts->id]));
+        }
 
         // 2. Grains
-        $grains = ProductCategory::create([
-            'name' => 'Grains', 
-            'slug' => 'grains', 
-            'status' => true,
-            'hero_image' => 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-            'description' => 'Rice, Wheat, Millet, and Staples'
-        ]);
+        $grains = ProductCategory::firstOrCreate(
+            ['slug' => 'grains'],
+            [
+                'name' => 'Grains', 
+                'status' => true,
+                'hero_image' => 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+                'description' => 'Rice, Wheat, Millet, and Staples'
+            ]
+        );
 
-        $grains->products()->createMany([
+        $grainsProducts = [
             [
                 'name' => 'Rice (Basmati & Non-Basmati)',
                 'description' => 'Premium aromatic Basmati and high-quality non-Basmati rice varieties.',
@@ -104,18 +107,24 @@ class ProductSeeder extends Seeder
                 'image' => 'https://images.unsplash.com/photo-1631526437937-295982823055?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
                 'sort_order' => 6
             ]
-        ]);
+        ];
+
+        foreach ($grainsProducts as $prod) {
+            Product::firstOrCreate(['name' => $prod['name']], array_merge($prod, ['category_id' => $grains->id]));
+        }
 
         // 3. Pulses
-        $pulses = ProductCategory::create([
-            'name' => 'Pulses', 
-            'slug' => 'pulses', 
-            'status' => true,
-            'hero_image' => 'https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-            'description' => 'Lentils, Chickpeas, Beans'
-        ]);
+        $pulses = ProductCategory::firstOrCreate(
+            ['slug' => 'pulses'],
+            [
+                'name' => 'Pulses', 
+                'status' => true,
+                'hero_image' => 'https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+                'description' => 'Lentils, Chickpeas, Beans'
+            ]
+        );
 
-        $pulses->products()->createMany([
+        $pulsesProducts = [
             [
                 'name' => 'Chickpeas (Kabuli & Desi)',
                 'description' => 'Protein-rich chickpeas, available in large white and smaller brown varieties.',
@@ -146,18 +155,24 @@ class ProductSeeder extends Seeder
                 'image' => 'https://images.unsplash.com/photo-1628103328575-b60584742a08?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
                 'sort_order' => 5
             ]
-        ]);
+        ];
+
+        foreach ($pulsesProducts as $prod) {
+            Product::firstOrCreate(['name' => $prod['name']], array_merge($prod, ['category_id' => $pulses->id]));
+        }
 
         // 4. Vegetables
-        $vegetables = ProductCategory::create([
-            'name' => 'Vegetables', 
-            'slug' => 'vegetables', 
-            'status' => true,
-            'hero_image' => 'https://images.unsplash.com/photo-1597362925123-77861d3fb714?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-            'description' => 'Farm-Fresh Seasonal Produce'
-        ]);
+        $vegetables = ProductCategory::firstOrCreate(
+            ['slug' => 'vegetables'],
+            [
+                'name' => 'Vegetables', 
+                'status' => true,
+                'hero_image' => 'https://images.unsplash.com/photo-1597362925123-77861d3fb714?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+                'description' => 'Farm-Fresh Seasonal Produce'
+            ]
+        );
 
-        $vegetables->products()->createMany([
+        $vegetablesProducts = [
             [
                 'name' => 'Red Onion',
                 'description' => 'Pungent and flavorful onions with a long shelf life.',
@@ -212,7 +227,11 @@ class ProductSeeder extends Seeder
                 'image' => 'https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
                 'sort_order' => 8
             ]
-        ]);
+        ];
+
+        foreach ($vegetablesProducts as $prod) {
+            Product::firstOrCreate(['name' => $prod['name']], array_merge($prod, ['category_id' => $vegetables->id]));
+        }
         
     }
 }
