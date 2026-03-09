@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', 'Contact Us')
 
@@ -55,6 +55,10 @@
                     <div class="mb-3">
                         <label class="form-label">Name</label>
                         <input type="text" name="name" required class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mobile Number</label>
+                        <input type="tel" name="mobile" required class="form-control" pattern="[0-9+\-\s()]+" title="Please enter a valid phone number">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email</label>

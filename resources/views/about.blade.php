@@ -1,19 +1,20 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', 'About Us')
 
 @section('content')
 
 {{-- ===== PAGE HEADER ===== --}}
-<div class="page-header text-center">
-    <div class="container">
-        <p style="color:var(--primary-gold);font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:0.5rem;">Who We Are</p>
-        <h1 class="animate-zoom-in">About AVmountain</h1>
-        <p class="mx-auto mt-2" style="color:var(--text-gray);max-width:600px;font-size:1rem;">
+{{-- ===== HERO HEADER ===== --}}
+<section class="hero" style="background: linear-gradient(to right, rgba(15, 15, 15, 0.9) 0%, rgba(15, 15, 15, 0.4) 100%), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop') no-repeat center center; background-size: cover; min-height: 50vh; display: flex; align-items: center; text-align: center; border-bottom: 2px solid var(--primary-gold);">
+    <div class="container hero-content" style="padding-top: 5rem;">
+        <p class="animate-fade-up" style="color:var(--primary-gold);font-size:0.95rem;letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:0.75rem;">Who We Are</p>
+        <h1 class="animate-zoom-in" style="font-size: 3.5rem; margin-bottom: 1rem;">About AVmountain</h1>
+        <p class="mx-auto animate-fade-up delay-200" style="color:#f0f0f0;max-width:650px;font-size:1.1rem;line-height:1.6;">
             A trusted supplier and exporter of premium agricultural commodities, rooted in India's fertile heartland.
         </p>
     </div>
-</div>
+</section>
 
 {{-- ===== COMPANY OVERVIEW (separate section) ===== --}}
 <section class="section-padding">
@@ -71,7 +72,7 @@
                         <div style="display:flex;gap:0.85rem;align-items:flex-start;">
                             <span style="font-size:1.3rem;margin-top:2px;">🌍</span>
                             <div>
-                                <div style="font-size:0.75rem;color:var(--primary-gold);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:2px;">Key Markets</div>
+                                <div style="font-size:0.75rem;color:var(--primary-gold);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:2px;">Export Regions</div>
                                 <div style="color:var(--text-white);font-size:0.95rem;">Middle East, Europe, Asia, North America, Africa</div>
                             </div>
                         </div>
@@ -83,10 +84,14 @@
                             </div>
                         </div>
                         <div style="display:flex;gap:0.85rem;align-items:flex-start;">
-                            <span style="font-size:1.3rem;margin-top:2px;">📞</span>
+                            <span style="font-size:1.3rem;margin-top:2px;">📱</span>
                             <div>
-                                <div style="font-size:0.75rem;color:var(--primary-gold);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:2px;">Business Focus</div>
-                                <div style="color:var(--text-white);font-size:0.95rem;">Quality Export · Ethical Sourcing · Timely Delivery</div>
+                                <div style="font-size:0.75rem;color:var(--primary-gold);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:2px;">Social & Presence</div>
+                                <div style="color:var(--text-white);font-size:0.95rem;">
+                                    <a href="#" style="color:#fff;text-decoration:none;" class="me-2">Instagram</a> | 
+                                    <a href="#" style="color:#fff;text-decoration:none;" class="mx-2">LinkedIn</a> | 
+                                    <a href="#" style="color:#fff;text-decoration:none;" class="ms-2">YouTube</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -113,7 +118,7 @@
                     <div style="font-size:2.8rem;margin-bottom:1rem;">🔭</div>
                     <h3 style="margin-bottom:1rem;">Our Vision</h3>
                     <p style="color:var(--text-gray);font-size:1rem;line-height:1.85;margin-bottom:1.5rem;">
-                        To be a globally recognized agricultural exporter and trader, renowned for excellence, innovation, and sustainable practices — bridging India's organic farms to world-class markets.
+                        To become a globally trusted agricultural exporter and trader, committed to delivering exceptional quality, driving innovation, and promoting sustainable, ethical farming practices that benefit farmers, customers, and the planet.
                     </p>
                     <div style="padding:1rem 1.25rem;background:rgba(212,175,55,0.07);border-left:3px solid var(--primary-gold);border-radius:0 8px 8px 0;">
                         <p style="color:var(--primary-gold);font-style:italic;margin:0;font-size:0.9rem;">"From Indian soil to global tables — delivering nature's finest."</p>
@@ -129,19 +134,15 @@
                     <div style="display:flex;flex-direction:column;gap:1.1rem;">
                         <div style="display:flex;align-items:flex-start;gap:0.75rem;">
                             <span style="color:var(--primary-gold);font-size:1.1rem;margin-top:3px;flex-shrink:0;">✦</span>
-                            <p style="color:var(--text-gray);margin:0;font-size:0.93rem;line-height:1.65;">Deliver world-class agricultural products to domestic and international markets.</p>
+                            <p style="color:var(--text-gray);margin:0;font-size:0.93rem;line-height:1.65;">To connect organic local farmers directly to global markets while building long-term partnerships.</p>
                         </div>
                         <div style="display:flex;align-items:flex-start;gap:0.75rem;">
                             <span style="color:var(--primary-gold);font-size:1.1rem;margin-top:3px;flex-shrink:0;">✦</span>
-                            <p style="color:var(--text-gray);margin:0;font-size:0.93rem;line-height:1.65;">Promote sustainable farming practices and ethical trade partnerships worldwide.</p>
+                            <p style="color:var(--text-gray);margin:0;font-size:0.93rem;line-height:1.65;">To strictly maintain high quality, reliability, transparency, and sustainable agricultural practices.</p>
                         </div>
                         <div style="display:flex;align-items:flex-start;gap:0.75rem;">
                             <span style="color:var(--primary-gold);font-size:1.1rem;margin-top:3px;flex-shrink:0;">✦</span>
-                            <p style="color:var(--text-gray);margin:0;font-size:0.93rem;line-height:1.65;">Maintain consistent quality and on-time delivery to ensure customer satisfaction.</p>
-                        </div>
-                        <div style="display:flex;align-items:flex-start;gap:0.75rem;">
-                            <span style="color:var(--primary-gold);font-size:1.1rem;margin-top:3px;flex-shrink:0;">✦</span>
-                            <p style="color:var(--text-gray);margin:0;font-size:0.93rem;line-height:1.65;">Build long-term relationships founded on integrity, transparency and shared growth.</p>
+                            <p style="color:var(--text-gray);margin:0;font-size:0.93rem;line-height:1.65;">To fulfill unique global requirements via dedicated supply chains and personalized solutions.</p>
                         </div>
                     </div>
                 </div>
@@ -196,42 +197,18 @@
     <div class="container">
         <div class="text-center mb-5">
             <p class="mb-1" style="color:var(--primary-gold);font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;">Our Credentials</p>
-            <h2 class="mb-2">Certifications</h2>
+            <h2 class="mb-2">Registration</h2>
             <p style="color:var(--text-gray);max-width:560px;margin:0 auto;font-size:0.95rem;">
-                Backed by recognized certifications ensuring quality, safety, and compliance at every step.
+                A formally registered entity committed to professional and ethical agricultural exports.
             </p>
         </div>
 
         <div class="d-flex flex-wrap justify-content-center gap-5">
 
             <div class="cert-badge animate-zoom-in" style="animation-delay:0s;">
-                <div class="cert-badge-icon" style="background:linear-gradient(135deg,#2e7d32,#4caf50);">🌿</div>
-                <div class="cert-badge-acronym">APEDA</div>
-                <div class="cert-badge-name">Agri. &amp; Processed Food<br>Products Export Authority</div>
-            </div>
-
-            <div class="cert-badge animate-zoom-in" style="animation-delay:0.1s;">
-                <div class="cert-badge-icon" style="background:linear-gradient(135deg,#1565c0,#42a5f5);">🏅</div>
-                <div class="cert-badge-acronym">ISO</div>
-                <div class="cert-badge-name">ISO 9001:2015<br>Quality Management</div>
-            </div>
-
-            <div class="cert-badge animate-zoom-in" style="animation-delay:0.2s;">
-                <div class="cert-badge-icon" style="background:linear-gradient(135deg,#e65100,#ff9800);">🌾</div>
-                <div class="cert-badge-acronym">FSSAI</div>
-                <div class="cert-badge-name">Food Safety &amp;<br>Standards Authority</div>
-            </div>
-
-            <div class="cert-badge animate-zoom-in" style="animation-delay:0.3s;">
-                <div class="cert-badge-icon" style="background:linear-gradient(135deg,#4a148c,#9c27b0);">🌱</div>
-                <div class="cert-badge-acronym">PGS</div>
-                <div class="cert-badge-name">Participatory<br>Guarantee System</div>
-            </div>
-
-            <div class="cert-badge animate-zoom-in" style="animation-delay:0.4s;">
-                <div class="cert-badge-icon" style="background:linear-gradient(135deg,#00695c,#26a69a);">📜</div>
-                <div class="cert-badge-acronym">Phyto</div>
-                <div class="cert-badge-name">Phytosanitary<br>Certification</div>
+                <div class="cert-badge-icon" style="background:linear-gradient(135deg,#d4af37,#aa8c2c);">🏢</div>
+                <div class="cert-badge-acronym">CIN Reg.</div>
+                <div class="cert-badge-name">Registered as<br>Private Limited</div>
             </div>
 
         </div>

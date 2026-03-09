@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'AVmountain Private Limited') - Premium Exporters</title>
 
+    {{-- Favicon --}}
+    <link rel="icon" type="image/svg+xml" href="{{ asset('images/logo.svg') }}">
+
     {{-- Bootstrap 5 CSS --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -196,6 +199,188 @@
 
     {{-- Bootstrap 5 JS Bundle --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    {{-- Interactive Half-Cylinder Side Card --}}
+    <style>
+        .side-widget {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1050;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+        }
+        .side-tab {
+            background: rgba(15, 15, 15, 0.6);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-top: 2px solid var(--primary-gold);
+            border-bottom: 2px solid var(--primary-gold);
+            border-right: 2px solid var(--primary-gold);
+            border-left: none;
+            border-top-right-radius: 35px;
+            border-bottom-right-radius: 35px;
+            width: 60px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: all 0.3s ease;
+            padding-right: 6px;
+            padding-left: 2px;
+        }
+        .side-tab:hover {
+            background: rgba(40, 40, 40, 0.4); /* subtle hover effect so it's clickable */
+            width: 70px;
+        }
+        .side-tab-logo {
+            width: 50px;
+            height: 40px;
+            background-color: var(--primary-gold);
+            -webkit-mask: url('{{ asset('images/logo.svg') }}') no-repeat center;
+            mask: url('{{ asset('images/logo.svg') }}') no-repeat center;
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+        }
+        .side-tab:hover .side-tab-logo {
+            transform: scale(1.08);
+            background-color: #FFFFFF;
+        }
+        
+        /* Mobile Responsiveness for Side Tab */
+        @media (max-width: 768px) {
+            .side-tab {
+                width: 70px;
+                height: 60px;
+                border-top-right-radius: 40px;
+                border-bottom-right-radius: 40px;
+                padding-right: 6px;
+                padding-left: 4px;
+            }
+            .side-tab:hover {
+                width: 80px;
+            }
+            .side-tab-logo {
+                width: 40px;
+                height: 30px;
+            }
+            .side-features {
+                width: 200px;
+                padding: 0.8rem;
+                margin-left: 5px;
+            }
+            .side-features h4 {
+                font-size: 0.9rem !important;
+                margin-bottom: 0.8rem !important;
+                padding-bottom: 0.5rem !important;
+            }
+            .feature-item {
+                font-size: 0.75rem;
+                gap: 8px;
+                margin-bottom: 0.7rem;
+            }
+            .feature-icon-wrapper {
+                width: 28px;
+                height: 28px;
+                font-size: 0.85rem;
+            }
+        }
+        
+        .side-features {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--primary-gold);
+            border-radius: 16px;
+            margin-left: 20px;
+            padding: 1.5rem;
+            pointer-events: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            width: 280px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+            font-size: 1rem;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .feature-item:last-child {
+            margin-bottom: 0;
+        }
+        .feature-item:hover {
+            transform: translateX(10px);
+            color: var(--primary-gold);
+        }
+        .feature-icon-wrapper {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+    </style>
+
+    <div class="side-widget" x-data="{ open: false }">
+        <div class="side-tab" @click="open = !open" title="Click to view our highlights">
+            <div class="side-tab-logo"></div>
+        </div>
+
+        <div class="side-features" 
+             x-show="open" 
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 translate-x-[-50px]"
+             x-transition:enter-end="opacity-100 translate-x-0"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 translate-x-0"
+             x-transition:leave-end="opacity-0 translate-x-[-50px]"
+             x-cloak
+             @click.away="open = false">
+             
+             <h4 style="font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.8rem; margin-bottom: 1.2rem; text-align: center;">Why AVmountain?</h4>
+             
+             <div class="feature-item">
+                 <div class="feature-icon-wrapper">🌿</div>
+                 <div>100% Organic Quality</div>
+             </div>
+             
+             <div class="feature-item">
+                 <div class="feature-icon-wrapper">🚜</div>
+                 <div>Direct Farm Sourcing</div>
+             </div>
+             
+             <div class="feature-item">
+                 <div class="feature-icon-wrapper">🌍</div>
+                 <div>Global Export Reach</div>
+             </div>
+             
+             <div class="feature-item">
+                 <div class="feature-icon-wrapper">⭐</div>
+                 <div>Premium Grade Processing</div>
+             </div>
+             
+             <div class="feature-item">
+                 <div class="feature-icon-wrapper">🛡️</div>
+                 <div>Certified Standards</div>
+             </div>
+             
+        </div>
+    </div>
 
     @livewireScripts
 </body>

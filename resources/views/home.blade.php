@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('content')
 
@@ -6,7 +6,7 @@
 <section class="hero">
     <div class="hero-content container">
         <h1 class="animate-zoom-in">Delivering Nature's<br>Goodness Worldwide</h1>
-        <p class="animate-fade-up delay-200 mb-4">AVmountain Private Limited - Your Trusted Partner in Premium Agricultural Exports</p>
+        <p class="animate-fade-up delay-200 mb-4" style="max-width: 800px; margin: 0 auto; color:#f0f0f0;">Connecting organic local farmers directly to global markets with a focus on high quality, transparency, and sustainable practices.</p>
         <div class="animate-fade-up delay-400 d-flex flex-wrap justify-content-center gap-3">
             <a href="{{ route('products') }}" class="btn btn-primary">Our Products</a>
             <a href="{{ route('contact') }}" class="btn btn-outline">Contact Us</a>
@@ -56,8 +56,8 @@
         <div class="glass-card animate-fade-left text-center" style="padding: 1.5rem 2rem;">
             <h2 class="mb-2">Welcome to AVmountain</h2>
             <p class="mx-auto mb-0" style="max-width:780px;color:var(--text-gray);">
-                Established in 2025, AVmountain Private Limited is a trusted supplier and exporter of premium agricultural commodities.
-                Headquartered in Salem, Tamil Nadu, we specialize in connecting organic Indian farms to global markets in the Middle East, Europe, Asia, North America, and Africa.
+                AVmountain Private Limited is a trusted supplier and exporter of premium agricultural products. We specialize in Coconuts, Grains, Pulses, and Fresh Vegetables. 
+                With a commitment to delivering trusted products and building long-term partnerships, we ensure a reliable supply chain tailored to fulfill the unique requirements of our global customers.
             </p>
         </div>
     </div>
@@ -71,8 +71,9 @@
         <div class="text-center mb-5">
             <p class="mb-2" style="color:var(--primary-gold);font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;">What We Offer</p>
             <h2 class="mb-3">Our Products</h2>
-            <p style="color:var(--text-gray);max-width:600px;margin:0 auto;">
-                Premium agricultural commodities sourced directly from certified Indian farms, ready for global export.
+            <p style="color:var(--text-gray);max-width:650px;margin:0 auto;">
+                At AVmountain Private Limited, we bring you a curated selection of premium farm-fresh products. 
+                Coconuts: Fresh, desiccated, and processed varieties | Grains: Rice, wheat, millet, and other staples | Pulses: Lentils, chickpeas, beans, etc. | Vegetables: Fresh and seasonal varieties.
             </p>
         </div>
 
@@ -140,7 +141,7 @@
                     <div class="why-card-icon">🌾</div>
                     <div class="why-card-num">01</div>
                     <h3 class="why-card-title">Farm-Fresh Quality</h3>
-                    <p class="why-card-desc">Handpicked produce sourced directly from organic-certified farms across India — ensuring freshness from soil to shipment.</p>
+                    <p class="why-card-desc">We deliver 100% organic, farm-fresh products with natural taste and high nutrition</p>
                 </div>
             </div>
             <div class="col-12 col-md-4">
@@ -153,10 +154,10 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="why-card animate-zoom-in delay-300">
-                    <div class="why-card-icon">🚚</div>
+                    <div class="why-card-icon">🌍</div>
                     <div class="why-card-num">03</div>
-                    <h3 class="why-card-title">Timely Delivery</h3>
-                    <p class="why-card-desc">We work with trusted logistics partners to ensure your cargo arrives on schedule — every time, no exceptions.</p>
+                    <h3 class="why-card-title">Global Trade</h3>
+                    <p class="why-card-desc">Reliable worldwide shipping with the highest quality and safety standards</p>
                 </div>
             </div>
         </div>
@@ -175,8 +176,8 @@
                 <div class="why-card animate-zoom-in delay-400" style="animation-delay:0.5s;">
                     <div class="why-card-icon">🤝</div>
                     <div class="why-card-num">05</div>
-                    <h3 class="why-card-title">Customer-Centric Approach</h3>
-                    <p class="why-card-desc">Your satisfaction is our priority. We provide personalised solutions, transparent communication and dedicated after-sales support.</p>
+                    <h3 class="why-card-title">Customer Centric</h3>
+                    <p class="why-card-desc">Committed to understanding and fulfilling every customer’s unique needs</p>
                 </div>
             </div>
         </div>
@@ -185,38 +186,37 @@
 </section>
 
 
-{{-- ===== MISSION & VISION ===== --}}
+{{-- ===== OUR CAPABILITIES & EXPORT PROCESS ===== --}}
 <section class="section-padding">
     <div class="container">
-        <h2 class="text-center mb-5">Our Mission &amp; Vision</h2>
-        <div class="row g-4">
-            <div class="col-12 col-md-6">
-                <div class="glass-card animate-fade-left text-center h-100">
-                    <div style="font-size:3rem;margin-bottom:1rem;">🔭</div>
-                    <h3>Our Vision</h3>
-                    <p style="color:var(--text-gray);font-size:1.05rem;line-height:1.8;">
-                        To be a globally recognized agricultural exporter and trader, renowned for excellence, innovation, and sustainable practices.
-                    </p>
+        <div class="text-center mb-5">
+            <p class="mb-2" style="color:var(--primary-gold);font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;">Reach & Process</p>
+            <h2 class="mb-3">Trade Capabilities</h2>
+            <p style="color:var(--text-gray);max-width:650px;margin:0 auto;">
+                We aim to connect farms to markets - locally, nationally, and globally. Our expertise covers:
+            </p>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-12 col-md-4">
+                <div class="glass-card animate-fade-right h-100 text-center" style="padding: 2.5rem 1.5rem;">
+                    <div style="font-size:3rem;margin-bottom:1rem;">🏘️</div>
+                    <h3 style="font-size:1.4rem;margin-bottom:1rem;">Intra-state Trade</h3>
+                    <p style="color:var(--text-gray);font-size:0.95rem;">Supplying fresh agricultural products across districts and states within India</p>
                 </div>
             </div>
-            <div class="col-12 col-md-6">
-                <div class="glass-card animate-fade-right h-100">
-                    <div style="font-size:3rem;margin-bottom:1rem;text-align:center;">🎯</div>
-                    <h3 class="text-center">Our Mission</h3>
-                    <ul class="mt-3" style="list-style:none;padding:0;color:var(--text-gray);display:flex;flex-direction:column;gap:0.9rem;">
-                        <li style="display:flex;align-items:flex-start;gap:0.75rem;">
-                            <span style="color:var(--primary-gold);font-size:1.1rem;margin-top:2px;">✦</span>
-                            <span>Deliver world-class agricultural products to domestic and international markets.</span>
-                        </li>
-                        <li style="display:flex;align-items:flex-start;gap:0.75rem;">
-                            <span style="color:var(--primary-gold);font-size:1.1rem;margin-top:2px;">✦</span>
-                            <span>Promote sustainable farming and ethical trade.</span>
-                        </li>
-                        <li style="display:flex;align-items:flex-start;gap:0.75rem;">
-                            <span style="color:var(--primary-gold);font-size:1.1rem;margin-top:2px;">✦</span>
-                            <span>Maintain consistent quality and on-time delivery to ensure customer satisfaction.</span>
-                        </li>
-                    </ul>
+            <div class="col-12 col-md-4">
+                <div class="glass-card animate-zoom-in h-100 text-center" style="padding: 2.5rem 1.5rem;">
+                    <div style="font-size:3rem;margin-bottom:1rem;">🛣️</div>
+                    <h3 style="font-size:1.4rem;margin-bottom:1rem;">Inter-state Trade</h3>
+                    <p style="color:var(--text-gray);font-size:0.95rem;">Bridging Indian states to deliver seasonal and specialty crops</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="glass-card animate-fade-left h-100 text-center" style="padding: 2.5rem 1.5rem;">
+                    <div style="font-size:3rem;margin-bottom:1rem;">🚢</div>
+                    <h3 style="font-size:1.4rem;margin-bottom:1rem;">Global Trade</h3>
+                    <p style="color:var(--text-gray);font-size:0.95rem;">Exporting top-quality agricultural products to international markets worldwide</p>
                 </div>
             </div>
         </div>
@@ -228,9 +228,9 @@
     <div class="container">
         <div class="text-center mb-5">
             <p class="mb-2" style="color:var(--primary-gold);font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;">Our Credentials</p>
-            <h2 class="mb-2">Certifications</h2>
+            <h2 class="mb-2">Registration</h2>
             <p style="color:var(--text-gray);max-width:560px;margin:0 auto;font-size:0.95rem;">
-                Backed by recognized certifications ensuring quality, safety, and compliance at every step.
+                A formally registered entity committed to professional and ethical agricultural exports.
             </p>
         </div>
 
@@ -238,37 +238,76 @@
         <div class="d-flex flex-wrap justify-content-center gap-5">
 
             <div class="cert-badge animate-zoom-in" style="animation-delay:0s;">
-                <div class="cert-badge-icon" style="background:linear-gradient(135deg,#2e7d32,#4caf50);">🌿</div>
-                <div class="cert-badge-acronym">APEDA</div>
-                <div class="cert-badge-name">Agri. & Processed Food<br>Products Export Authority</div>
-            </div>
-
-            <div class="cert-badge animate-zoom-in" style="animation-delay:0.1s;">
-                <div class="cert-badge-icon" style="background:linear-gradient(135deg,#1565c0,#42a5f5);">🏅</div>
-                <div class="cert-badge-acronym">ISO</div>
-                <div class="cert-badge-name">ISO 9001:2015<br>Quality Management</div>
-            </div>
-
-            <div class="cert-badge animate-zoom-in" style="animation-delay:0.2s;">
-                <div class="cert-badge-icon" style="background:linear-gradient(135deg,#e65100,#ff9800);">🌾</div>
-                <div class="cert-badge-acronym">FSSAI</div>
-                <div class="cert-badge-name">Food Safety &amp;<br>Standards Authority</div>
-            </div>
-
-            <div class="cert-badge animate-zoom-in" style="animation-delay:0.3s;">
-                <div class="cert-badge-icon" style="background:linear-gradient(135deg,#4a148c,#9c27b0);">🌱</div>
-                <div class="cert-badge-acronym">PGS</div>
-                <div class="cert-badge-name">Participatory<br>Guarantee System</div>
-            </div>
-
-            <div class="cert-badge animate-zoom-in" style="animation-delay:0.4s;">
-                <div class="cert-badge-icon" style="background:linear-gradient(135deg,#00695c,#26a69a);">📜</div>
-                <div class="cert-badge-acronym">Phyto</div>
-                <div class="cert-badge-name">Phytosanitary<br>Certification</div>
+                <div class="cert-badge-icon" style="background:linear-gradient(135deg,#d4af37,#aa8c2c);">🏢</div>
+                <div class="cert-badge-acronym">CIN Reg.</div>
+                <div class="cert-badge-name">Registered as<br>Private Limited</div>
             </div>
 
         </div>
 
+    </div>
+</section>
+
+{{-- ===== FAQs ===== --}}
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center mb-5">
+            <p class="mb-2" style="color:var(--primary-gold);font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;">Got Questions?</p>
+            <h2 class="mb-3">Frequently Asked Questions</h2>
+            <p style="color:var(--text-gray);max-width:650px;margin:0 auto;">
+                Find quick answers to common questions about our products, sourcing, and global export processes.
+            </p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+                <div class="accordion" id="faqAccordion">
+                    
+                    {{-- FAQ 1 --}}
+                    <div class="accordion-item" style="background:rgba(255,255,255,0.03);border:1px solid var(--glass-border);border-radius:10px;margin-bottom:1rem;overflow:hidden;">
+                        <h2 class="accordion-header" id="faqHeadingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="false" aria-controls="faqCollapseOne" style="background:transparent;color:#fff;box-shadow:none;padding:1.25rem;">
+                                <strong>What products do you primarily export?</strong>
+                            </button>
+                        </h2>
+                        <div id="faqCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body" style="color:var(--text-gray);border-top:1px solid rgba(255,255,255,0.05);padding:1.25rem;">
+                                We specialize in exporting premium agricultural commodities, with a primary focus on fresh Coconuts, a variety of Grains, Nutrient-rich Pulses, and Fresh Vegetables sourced directly from Indian farms.
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- FAQ 2 --}}
+                    <div class="accordion-item" style="background:rgba(255,255,255,0.03);border:1px solid var(--glass-border);border-radius:10px;margin-bottom:1rem;overflow:hidden;">
+                        <h2 class="accordion-header" id="faqHeadingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo" style="background:transparent;color:#fff;box-shadow:none;padding:1.25rem;">
+                                <strong>How do you ensure the quality of your products?</strong>
+                            </button>
+                        </h2>
+                        <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body" style="color:var(--text-gray);border-top:1px solid rgba(255,255,255,0.05);padding:1.25rem;">
+                                Quality is our top priority. We source directly from certified local farmers and enforce strict, multi-stage quality control checks and global trade standards before any shipment leaves our facilities.
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- FAQ 3 --}}
+                    <div class="accordion-item" style="background:rgba(255,255,255,0.03);border:1px solid var(--glass-border);border-radius:10px;margin-bottom:1rem;overflow:hidden;">
+                        <h2 class="accordion-header" id="faqHeadingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree" style="background:transparent;color:#fff;box-shadow:none;padding:1.25rem;">
+                                <strong>Which countries do you currently export to?</strong>
+                            </button>
+                        </h2>
+                        <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body" style="color:var(--text-gray);border-top:1px solid rgba(255,255,255,0.05);padding:1.25rem;">
+                                We actively supply and export to various international markets, with a strong presence in the Middle East, Europe, Asia, North America, and Africa.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

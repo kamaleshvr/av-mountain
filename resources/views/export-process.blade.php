@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', 'Export Process')
 
@@ -8,17 +8,18 @@
 <section class="hero" style="min-height:60vh;">
     <div class="hero-content container">
         <h1 class="animate-zoom-in">Our Export Process</h1>
-        <p class="animate-fade-up delay-200">From Indian Farms to Global Markets &ndash; A Journey of Quality &amp; Trust</p>
+        <p class="animate-fade-up delay-200" style="max-width: 750px; margin: 0 auto; line-height: 1.6;">
+            We ensure the highest standards from soil to shipment. Sourcing directly from certified farmers, enforcing strict quality controls, and focusing on lasting partnerships.
+        </p>
     </div>
 </section>
 
 {{-- Process Steps --}}
 <section class="section-padding">
     <div class="container" style="max-width:960px;">
-
         @php
         $steps = [
-            ['num'=>1,'title'=>'Direct Sourcing from Farmers','img'=>'images/export-process/step-1.png','side'=>'right',
+            ['num'=>1,'title'=>'certified farmers to dedicated farmers','img'=>'images/export-process/step-1.png','side'=>'right',
              'desc'=>'We believe quality starts at the source. Our procurement team works directly with certified farmers in Tamil Nadu and across India to select the finest produce.',
              'points'=>['Direct purchase ensuring fair trade prices for farmers.','On-field quality inspection before harvesting.','Selection of organic and chemical-free produce.']],
             ['num'=>2,'title'=>'Quality Testing &amp; Packaging','img'=>'images/export-process/step-2.png','side'=>'left',
@@ -31,7 +32,7 @@
              'desc'=>'We partner with leading logistics providers for Air and Sea freight to ensure your cargo reaches safely and on time.',
              'points'=>['Container Loading supervision.','Temperature-controlled containers (Reefer) for perishables.','Live tracking updates until arrival.']],
             ['num'=>5,'title'=>'Delivery &amp; Partnership','img'=>'images/export-process/step-5.png','side'=>'right',
-             'desc'=>"Our job doesn't end at shipping. We ensure you are satisfied with the delivery and aim to build a lasting business relationship.",
+             'desc'=>'Our service doesn’t stop at delivery. We prioritize your satisfaction and build lasting partnerships rooted in trust and reliability.',
              'points'=>['On-time delivery confirmation.','Post-shipment support and feedback.','Long-term contracts for consistent supply.']],
         ];
         @endphp
