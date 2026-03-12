@@ -18,7 +18,7 @@
             <label for="hero_image" style="display: block; margin-bottom: 0.5rem; color: var(--text-gray);">Hero Image (Max 10MB)</label>
             @if($category->hero_image)
                 <div style="margin-bottom: 1rem;">
-                    <img src="{{ Str::startsWith($category->hero_image, 'https') ? $category->hero_image : asset($category->hero_image) }}" alt="Current Image" style="max-height: 100px; border-radius: 5px;">
+                    <img src="{{ $category->hero_image_url }}" alt="Current Image" style="max-height: 100px; border-radius: 5px;">
                 </div>
             @endif
             <input type="file" id="hero_image" accept="image/*" style="width: 100%; padding: 0.8rem; border-radius: 5px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: white;">

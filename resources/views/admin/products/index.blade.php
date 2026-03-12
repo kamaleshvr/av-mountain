@@ -46,7 +46,7 @@
                 <td style="padding: 1rem;">
                     <div style="display: flex; align-items: center;">
                         @if($product->image)
-                            <img src="{{ Str::startsWith($product->image, 'https') ? $product->image : asset($product->image) }}" alt="" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px; margin-right: 1rem;">
+                            <img src="{{ $product->image_url }}" alt="" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px; margin-right: 1rem;">
                         @endif
                         {{ $product->name }}
                     </div>
