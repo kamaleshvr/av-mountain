@@ -224,13 +224,7 @@ class ProductSeeder extends Seeder
             ]
         ];
 
-        // Limit seeding for base64 mode to avoid packet errors
-        if (env('IMAGE_STORAGE_MODE') === 'base64') {
-            $coconutsProducts = array_slice($coconutsProducts, 0, 2);
-            $grainsProducts = array_slice($grainsProducts, 0, 2);
-            $pulsesProducts = array_slice($pulsesProducts, 0, 2);
-            $vegetablesProducts = array_slice($vegetablesProducts, 0, 2);
-        }
+        // All products will be seeded. Large images will be handled by encodeImage helper.
 
         foreach ($coconutsProducts as $prod) {
             Product::firstOrCreate(
