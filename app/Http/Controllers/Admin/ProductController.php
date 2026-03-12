@@ -67,14 +67,14 @@ class ProductController extends Controller
                 if (!$path) {
                     return back()->withInput()->withErrors(['image' => 'Image processing failed.']);
                 }
-                $validated['image'] = '/storage/' . $path;
+                $validated['image'] = $path;
             } elseif ($request->hasFile('image')) {
                 // Fallback to standard upload
                 $path = $this->handleFileUpload($request->file('image'), 'products');
                 if (!$path) {
                     return back()->withInput()->withErrors(['image' => 'File upload failed. Please try again.']);
                 }
-                $validated['image'] = '/storage/' . $path;
+                $validated['image'] = $path;
             }
 
             Product::create($validated);
@@ -112,14 +112,14 @@ class ProductController extends Controller
                 if (!$path) {
                     return back()->withInput()->withErrors(['image' => 'Image processing failed.']);
                 }
-                $validated['image'] = '/storage/' . $path;
+                $validated['image'] = $path;
             } elseif ($request->hasFile('image')) {
                 $path = $this->handleFileUpload($request->file('image'), 'products');
                 // dd($path);
                 if (!$path) {
                     return back()->withInput()->withErrors(['image' => 'File upload failed. Please try again.']);
                 }
-                $validated['image'] = '/storage/' . $path;
+                $validated['image'] = $path;
             } else {
                 unset($validated['image']);
             }
@@ -146,7 +146,13 @@ class ProductController extends Controller
         try {
             // Check if string contains data URI header
             if (preg_match('/^data:image\/(\w+);base64,/', $base64String, $type)) {
-                $base64String = substr($base64String, strpos($base64String, ',') + 1);
+                
+                // If storing as Base64 in DB
+                if (env('IMAGE_STORAGE_MODE') === 'base64') {
+                    return $base64String;
+                }
+
+                $rawBase64 = substr($base64String, strpos($base64String, ',') + 1);
                 $type = strtolower($type[1]); // jpg, png, etc.
                 
                 if (!in_array($type, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
@@ -154,7 +160,7 @@ class ProductController extends Controller
                     return false;
                 }
                 
-                $data = base64_decode($base64String);
+                $data = base64_decode($rawBase64);
                 if ($data === false) {
                     \Log::error('Base64 Upload: Decode failed');
                     return false;
@@ -163,7 +169,7 @@ class ProductController extends Controller
                 $filename = time() . '_' . Str::random(10) . '.' . $type;
                 
                 if (\Storage::disk('public')->put($folder . '/' . $filename, $data)) {
-                    return $folder . '/' . $filename;
+                    return 'storage/' . $folder . '/' . $filename;
                 }
             }
             return false;
@@ -188,6 +194,13 @@ class ProductController extends Controller
                 return false;
             }
 
+            // If storing as Base64 in DB
+            if (env('IMAGE_STORAGE_MODE') === 'base64') {
+                $data = file_get_contents($file->getRealPath());
+                $base64 = 'data:image/' . $file->getClientOriginalExtension() . ';base64,' . base64_encode($data);
+                return $base64;
+            }
+
             $filename = time() . '_' . Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $file->getClientOriginalExtension();
             
             // Use putFileAs for explicit control
@@ -198,7 +211,7 @@ class ProductController extends Controller
                 return false;
             }
 
-            return $path;
+            return 'storage/' . $path;
         } catch (\Exception $e) {
             \Log::error('File upload exception: ' . $e->getMessage());
             return false;

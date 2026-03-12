@@ -4,7 +4,7 @@
         <div class="col">
         <div class="glass-card product-card animate-zoom-in delay-100" style="text-align: center; overflow: hidden;">
             @if($product->image)
-            <img src="{{ Str::startsWith($product->image, 'https') ? $product->image : asset($product->image) }}" alt="{{ $product->name }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+            <img src="{{ $product->image_url }}" alt="{{ $product->name }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
             @endif
             <h3>{{ $product->name }}</h3>
             <p style="color: var(--text-gray); font-size: 0.9rem;">{{ $product->description }}</p>

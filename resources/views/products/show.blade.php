@@ -3,7 +3,7 @@
 @section('title', $category->name . ' - AVmountain')
 
 @section('content')
-    <div class="hero" style="height: 60vh; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ Str::startsWith($category->hero_image, 'https') ? $category->hero_image : asset($category->hero_image) }}');">
+    <div class="hero" style="height: 60vh; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ $category->hero_image_url }}');">
         <div class="hero-content">
             <h1>Premium {{ $category->name }}</h1>
             <p>{{ $category->description }}</p>

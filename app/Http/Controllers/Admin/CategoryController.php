@@ -38,14 +38,14 @@ class CategoryController extends Controller
                 if (!$path) {
                     return back()->withInput()->withErrors(['hero_image' => 'Image processing failed.']);
                 }
-                $validated['hero_image'] = '/storage/' . $path;
+                $validated['hero_image'] = $path;
             } elseif ($request->hasFile('hero_image')) {
                 // Fallback to standard upload
                 $path = $this->handleFileUpload($request->file('hero_image'), 'categories');
                 if (!$path) {
                     return back()->withInput()->withErrors(['hero_image' => 'File upload failed. Please try again.']);
                 }
-                $validated['hero_image'] = '/storage/' . $path;
+                $validated['hero_image'] = $path;
             }
 
             ProductCategory::create($validated);
@@ -80,13 +80,13 @@ class CategoryController extends Controller
                 if (!$path) {
                     return back()->withInput()->withErrors(['hero_image' => 'Image processing failed.']);
                 }
-                $validated['hero_image'] = '/storage/' . $path;
+                $validated['hero_image'] = $path;
             } elseif ($request->hasFile('hero_image')) {
                 $path = $this->handleFileUpload($request->file('hero_image'), 'categories');
                 if (!$path) {
                     return back()->withInput()->withErrors(['hero_image' => 'File upload failed. Please try again.']);
                 }
-                $validated['hero_image'] = '/storage/' . $path;
+                $validated['hero_image'] = $path;
             } else {
                 unset($validated['hero_image']);
             }
@@ -110,15 +110,18 @@ class CategoryController extends Controller
         return redirect()->route('admin.categories.index')->with('success', 'Category deleted successfully.');
     }
 
-    /**
-     * Handle Base64 image upload.
-     */
     private function handleBase64Upload($base64String, $folder)
     {
         try {
             // Check if string contains data URI header
             if (preg_match('/^data:image\/(\w+);base64,/', $base64String, $type)) {
-                $base64String = substr($base64String, strpos($base64String, ',') + 1);
+                
+                // If storing as Base64 in DB
+                if (env('IMAGE_STORAGE_MODE') === 'base64') {
+                    return $base64String;
+                }
+
+                $rawBase64 = substr($base64String, strpos($base64String, ',') + 1);
                 $type = strtolower($type[1]); // jpg, png, etc.
                 
                 if (!in_array($type, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
@@ -126,7 +129,7 @@ class CategoryController extends Controller
                     return false;
                 }
                 
-                $data = base64_decode($base64String);
+                $data = base64_decode($rawBase64);
                 if ($data === false) {
                     \Log::error('Base64 Upload: Decode failed');
                     return false;
@@ -135,7 +138,7 @@ class CategoryController extends Controller
                 $filename = time() . '_' . Str::random(10) . '.' . $type;
                 
                 if (\Storage::disk('public')->put($folder . '/' . $filename, $data)) {
-                    return $folder . '/' . $filename;
+                    return 'storage/' . $folder . '/' . $filename;
                 }
             }
             return false;
@@ -160,6 +163,13 @@ class CategoryController extends Controller
                 return false;
             }
 
+            // If storing as Base64 in DB
+            if (env('IMAGE_STORAGE_MODE') === 'base64') {
+                $data = file_get_contents($file->getRealPath());
+                $base64 = 'data:image/' . $file->getClientOriginalExtension() . ';base64,' . base64_encode($data);
+                return $base64;
+            }
+
             $filename = time() . '_' . Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $file->getClientOriginalExtension();
             
             // Use putFileAs for explicit control
@@ -170,7 +180,7 @@ class CategoryController extends Controller
                 return false;
             }
 
-            return $path;
+            return 'storage/' . $path;
         } catch (\Exception $e) {
             \Log::error('File upload exception: ' . $e->getMessage());
             return false;
